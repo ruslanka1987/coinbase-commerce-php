@@ -173,15 +173,14 @@ class ApiResourceList extends \ArrayObject
             return $this->pagination['total'];
         }
     }
-
-    public function asort()
+    public function asort(int $flags = SORT_REGULAR)
     {
-        asort($this->items);
+        asort($this->items, $flags);
     }
 
-    public function ksort()
+    public function ksort(int $flags = SORT_REGULAR)
     {
-        ksort($this->items);
+        ksort($this->items, $flags);
     }
 
     public function offsetUnset($key)
